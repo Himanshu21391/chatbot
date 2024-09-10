@@ -1,56 +1,48 @@
+from app import ChatBot
 import streamlit as st
-from openai import OpenAI
+import logging
 
-# Show title and description.
-st.title("💬 Chatbot")
-st.write(
-    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
-    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
-)
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
 
-# Ask user for their OpenAI API key via `st.text_input`.
-# Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
-# via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
-openai_api_key = st.text_input("OpenAI API Key", type="password")
-if not openai_api_key:
-    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
-else:
+def generate_response(input):
+    logging.debug(f"User input: {input}")
+    result = bot.rag_chain.invoke(input)
+    logging.debug(f"Raw result: {result}")
+    if "Answer:" in result:
+        return result.split("Answer:")[1].strip()
+    else:
+        return result.strip()
 
-    # Create an OpenAI client.
-    client = OpenAI(api_key=openai_api_key)
+# Use logging in other parts as necessary
 
-    # Create a session state variable to store the chat messages. This ensures that the
-    # messages persist across reruns.
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
+bot = ChatBot()
+st.set_page_config(page_title="ElectroInsight Bot")
+with st.sidebar:
+    st.title('ElectroInsight Chatbot')
 
-    # Display the existing chat messages via `st.chat_message`.
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
 
-    # Create a chat input field to allow the user to enter a message. This will display
-    # automatically at the bottom of the page.
-    if prompt := st.chat_input("What is up?"):
 
-        # Store and display the current prompt.
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
+# Store LLM generated responses
+if "messages" not in st.session_state.keys():
+    st.session_state.messages = [{"role": "assistant", "content": "Welcome to ElectroInsight! How can I assist you in your electronics journey today?"}]
 
-        # Generate a response using the OpenAI API.
-        stream = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.messages
-            ],
-            stream=True,
-        )
+# Display chat messages
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.write(message["content"])
 
-        # Stream the response to the chat using `st.write_stream`, then store it in 
-        # session state.
-        with st.chat_message("assistant"):
-            response = st.write_stream(stream)
-        st.session_state.messages.append({"role": "assistant", "content": response})
+# User-provided prompt
+if input := st.chat_input():
+    st.session_state.messages.append({"role": "user", "content": input})
+    with st.chat_message("user"):
+        st.write(input)
+
+# Generate a new response if last message is not from assistant
+if st.session_state.messages[-1]["role"] != "assistant":
+    with st.chat_message("assistant"):
+        with st.spinner("Getting your answer from mystery stuff.."):
+            response = generate_response(input)
+            st.write(response)
+    message = {"role": "assistant", "content": response}
+    st.session_state.messages.append(message)
