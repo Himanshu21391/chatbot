@@ -1,0 +1,9 @@
+Part Number    General Description                                          Marketing Status    Package        Supply Voltage (V) min    Supply Voltage (V) max  Standby Current (µA) typ    Output Stage Mode
+STA508         40 V,  4.5 A quad power half-bridge digital audio amplifier  Active              PowerSO 36                         10                        36  -                           DDX
+STA510A        44 V,  5.5 A quad power half-bridge digital audio amplifier  Active              PowerSO 36                         10                        39  -                           DDX
+STA510F        44-V,  5.5-A,  quad power half bridge                        Active              PowerSSO 36                        10                        40  -                           FFX
+STA515W        40 V,  3 A quad power half-bridge digital audio amplifier    Active              PowerSSO 36                        10                        36  -                           DDX
+STA516B        65-volt,  7.5-amp,  quad power half bridge                   Active              PowerSO 36                         10                        58  -                           FFX
+STA516BE       500W FFX Digital Amplifier Power Stage                       Active              PowerSO 36                         10                        60  2400                        FFX
+STA518         40 V,  3.5 A quad power half-bridge digital audio amplifier  Active              PowerSSO 36                        10                        36  -                           DDX
+STA533WF       18 V,  3 A quad power half-bridge                            Active              PowerSSO 36                         5                        18  -                           FFX

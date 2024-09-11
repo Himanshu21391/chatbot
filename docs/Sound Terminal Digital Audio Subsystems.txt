@@ -1,0 +1,12 @@
+Part Number    General Description                                                      Marketing Status    Package                         Supply Voltage (V) min    Supply Voltage (V) max    Standby Current (µA) typ
+STA333BW       2.1-channel high-efficiency digital audio system                         Active              PowerSSO 36                     4.5                       18                        -
+STA333IS       Sound Terminal 2-channel high-efficiency digital audio system            Active              Chip Scale Package 0.5mm pitch  4.5                       18                        60
+STA333ML       Sound Terminal 2-channel microless high-efficiency digital audio system  Active              PowerSSO 36                     4.5                       20                        -
+STA333W        2-channel high-efficiency digital audio system                           Active              PowerSSO 36                     4.5                       18                        -
+STA339BW       2.1-channel high-efficiency digital audio system                         Active              PowerSSO 36                     5                         26                        -
+STA339BWS      2.1 channel high efficiency digital audio system                         Active              PowerSSO 36                     4.5                       21.5                      -
+STA350B        Sound Terminal 2.1-channel high-efficiency digital audio system          Active              PowerSSO 36                     5                         26                        25
+STA350BW       Sound Terminal 2.1-channel high-efficiency digital audio system          Active              PowerSSO 36                     5                         26                        25
+STA369BW       Sound terminal 2.1-channel high-efficiency digital audio system          Active              PowerSSO 36                     5                         26                        -
+STA369BWS      2.1-channel 40-W high-efficiency digital audio system Sound Terminal     Active              PowerSSO 36                     4.5                       21.5                      -
+STA559BW       Digital Audio ICs,  Sound Terminals                                      Active              PowerSSO 36                     -                         -                         -

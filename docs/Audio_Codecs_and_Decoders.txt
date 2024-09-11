@@ -1,0 +1,2 @@
+Part Number    General Description                         Marketing Status    Package      Supply Voltage (V) min    Operating Temperature (°C) min    Operating Temperature (°C) max
+STA020         96 kHz digital audio interface transmitter  Active              SO-24                             4                               -20                                85

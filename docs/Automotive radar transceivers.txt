@@ -1,0 +1,2 @@
+Part Number    General Description                                  Marketing Status    Package       Operating Temperature (°C) min    Operating Temperature (°C) max
+STRADA431      24-GHz Transceiver MMIC for Automotive Radar Sensor  Active              VFQFPN 6X6                               -40                               125

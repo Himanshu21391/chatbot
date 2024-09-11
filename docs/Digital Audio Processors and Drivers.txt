@@ -1,0 +1,3 @@
+Part Number    General Description                              Marketing Status    Package               Output Stage Mode
+STA309A        Multi-channel digital audio processor with DDX®  Active              LQFP 64 10x10x1.4 mm  DDX
+STA311B        Multichannel digital audio processor with FFX    Active              VFQFPN 59 8x8x0.9     FFX
