@@ -17,15 +17,15 @@ def generate_response(input):
 # Use logging in other parts as necessary
 
 bot = ChatBot()
-st.set_page_config(page_title="ElectroInsight Bot")
+st.set_page_config(page_title="ChatBot")
 with st.sidebar:
-    st.title('ElectroInsight Chatbot')
+    st.title('Chatbot')
 
 
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
-    st.session_state.messages = [{"role": "assistant", "content": "Welcome to ElectroInsight! How can I assist you in your electronics journey today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "Welcome to ChatBot! How can I assist you in your electronics journey today?"}]
 
 # Display chat messages
 for message in st.session_state.messages:
